@@ -10,12 +10,13 @@ const weatherImages = {
 	Rain: "images/rain.png",
 	Snow: "images/snow.png",
 	Clouds: "images/cloud.png",
-	Haze: "images/wind.png",
+	Mist: "images/wind.png",
 };
 
 const convertKelvinToCelsius = (k) => Math.round(k - 273.15);
 
 const displayWeatherData = (weatherData) => {
+	console.log(weatherData);
 	const image = document.querySelector(".weather-box img");
 	const temperature = document.querySelector(".weather-box .temperature");
 	const description = document.querySelector(".weather-box .description");
@@ -63,7 +64,7 @@ const fetchWeatherData = async (city) => {
 		}
 
 		error404.style.display = "none";
-		error404.classList.remove("fadeIn");
+		error404.classList.remove("fade-in");
 		displayWeatherData(data);
 	} catch (error) {
 		console.error("Error fetching weather data:", error);
