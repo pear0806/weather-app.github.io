@@ -13,7 +13,7 @@ A simple weather application that allows users to search for current weather con
 
 ## Demo
 
-![Demo Image](screen-shot.png) _(Replace with an actual screenshot of your app)_
+![Demo Image](screen-shot.png)
 
 ## Installation
 
