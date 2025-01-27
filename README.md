@@ -35,7 +35,7 @@ A simple weather application that allows users to search for current weather con
 2. Click the search button or press `Enter`.
 3. View the weather information or error message if the location is invalid.
 4. To view the complete weather data:
-   - Press ```F12``` or open and Developer Tools
+   - Press ```F12``` or open the Developer Tools
    - Select the "Console" tab
    - The full API response data will be displayed in the console when you search for a location
 
