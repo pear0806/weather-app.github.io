@@ -44,14 +44,8 @@ const APIKey = "your_api_key_here";
 
 You can get a free API key by signing up at [OpenWeather](https://openweathermap.org/).
 
-## Screenshots
+## Screenshots Invalid Location
 
-### Weather Information
-
-![Weather Information Screenshot](images/weather-info.png)
-
-### Invalid Location
-
-![Invalid Location Screenshot](images/invalid-location.png)
+![Invalid Location Screenshot](images/404.png)
 
 Feel free to contribute by submitting issues or pull requests!
