@@ -7,9 +7,10 @@ A simple weather application that allows users to search for current weather con
 -   Search for weather information by location.
 -   Displays:
     -   Temperature (in Celsius)
-    -   Weather condition (e.g., Clear, Rain, Snow, etc.)
+    -   Weather conditions (e.g., Clear, Rain, Snow, etc.)
     -   Humidity percentage
     -   Wind speed in Km/h
+-   View detailed API response data in the browser's developer console
 
 ## Demo
 
@@ -33,6 +34,10 @@ A simple weather application that allows users to search for current weather con
 1. Enter a location (e.g., "Chiayi") in the search box.
 2. Click the search button or press `Enter`.
 3. View the weather information or error message if the location is invalid.
+4. To view the complete weather data:
+   - Press ```F12``` or open the Developer Tools
+   - Select the "Console" tab
+   - The full API response data will be displayed in the console when you search for a location
 
 ## API Key Setup
 
