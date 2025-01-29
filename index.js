@@ -37,7 +37,7 @@ const displayWeatherData = (weatherData) => {
 	weatherDetails.style.display = "";
 	weatherBox.classList.add("fade-in");
 	weatherDetails.classList.add("fade-in");
-	container.style.height = "590px";
+	container.style.height = "500px";
 };
 
 const handleError = () => {
@@ -71,6 +71,7 @@ const fetchWeatherData = async (city) => {
 		handleError();
 	}
 };
+
 search.addEventListener("click", () => {
 	fetchWeatherData(searchInput.value);
 });
