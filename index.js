@@ -40,7 +40,7 @@ const displayWeatherData = (weatherData) => {
 	container.style.height = "500px";
 };
 
-const handleError = () => {
+const DisplayError = () => {
 	container.style.height = "400px";
 	weatherBox.style.display = "none";
 	weatherDetails.style.display = "none";
@@ -48,18 +48,45 @@ const handleError = () => {
 	error404.classList.add("fade-in");
 };
 
+async function translate(place) {
+	const api = "AIzaSyAROxfODwHOLINsx3YF6cPe5_xsTxWIOB4";
+	const url = `https://translation.googleapis.com/language/translate/v2?key=${api}`;
+	console.log("translate url : ", url);
+	const response = await fetch(url, {
+		method: "POST",
+		headers: { "content-type": "application/json" },
+		body: JSON.stringify({
+			q: place,
+			source: "zh-TW",
+			target: "en",
+			format: "text",
+		}),
+	});
+
+	const data = await response.json();
+	return data.data.translations[0].translatedText;
+}
+
 const fetchWeatherData = async (city) => {
 	try {
 		if (!city) return;
 
+		let translatedCity;
+		try {
+			translatedCity = await translate(city);
+		} catch (error) {
+			translatedCity = city;
+		}
+
 		const APIKey = "2c75039348d401010420162c8e236a54";
-		const response = await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?appid=${APIKey}&q=${city}`
-		);
+		const url = `https://api.openweathermap.org/data/2.5/weather?appid=${APIKey}&q=${translate(
+			city
+		)}`;
+		const response = await fetch(url);
 		const data = await response.json();
 
 		if (data.cod === "404") {
-			handleError();
+			DisplayError();
 			return;
 		}
 
@@ -67,8 +94,8 @@ const fetchWeatherData = async (city) => {
 		error404.classList.remove("fade-in");
 		displayWeatherData(data);
 	} catch (error) {
-		console.error("Error fetching weather data:", error);
-		handleError();
+		console.error("Error fetching weather data : ", error);
+		DisplayError();
 	}
 };
 
