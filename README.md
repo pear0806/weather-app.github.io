@@ -41,13 +41,16 @@ A simple weather application that allows users to search for current weather con
 
 ## API Key Setup
 
-This app uses the OpenWeather API. Replace the placeholder API key in the `index.js` file with your own API key:
+This app uses the `OpenWeather API` and `Google API`. Replace the placeholder API key in the `index.js` file with your own API key:
 
 ```javascript
-const APIKey = "your_api_key_here";
+const APIKey = "your_openweather_api_key_here";
+// line 79 (in fetchWeatherData funtion)
+const api = "your_google_api_key_here";
+// line 52 (in translate function)
 ```
 
-You can get a free API key by signing up at [OpenWeather](https://openweathermap.org/).
+You can get a free API key by signing up at [OpenWeather](https://openweathermap.org/) and [Google cloud console](https://console.cloud.google.com/welcome?_gl=1*19n788i*_up*MQ..&gclid=CjwKCAiAzvC9BhADEiwAEhtlN2x6vZDFxHpqViXvoHwszHOYxT1J7qIIz84zkbDMgDiiDC9BMl70OhoCFmEQAvD_BwE&gclsrc=aw.ds&hl=zh-tw&inv=1&invt=AbqeHw&project=weather-app-translate).
 
 ## Screenshots Invalid Location
 

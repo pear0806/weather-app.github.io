@@ -51,13 +51,11 @@ const DisplayError = () => {
 async function translate(place) {
 	const api = "AIzaSyAROxfODwHOLINsx3YF6cPe5_xsTxWIOB4";
 	const url = `https://translation.googleapis.com/language/translate/v2?key=${api}`;
-	console.log("translate url : ", url);
 	const response = await fetch(url, {
 		method: "POST",
 		headers: { "content-type": "application/json" },
 		body: JSON.stringify({
 			q: place,
-			source: "zh-TW",
 			target: "en",
 			format: "text",
 		}),
@@ -79,9 +77,7 @@ const fetchWeatherData = async (city) => {
 		}
 
 		const APIKey = "2c75039348d401010420162c8e236a54";
-		const url = `https://api.openweathermap.org/data/2.5/weather?appid=${APIKey}&q=${translate(
-			city
-		)}`;
+		const url = `https://api.openweathermap.org/data/2.5/weather?appid=${APIKey}&q=${translatedCity}`;
 		const response = await fetch(url);
 		const data = await response.json();
 
