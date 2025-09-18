@@ -23,8 +23,12 @@ const displayWeatherData = (weatherData) => {
 	const humidity = document.querySelector(".weather-details .humidity span");
 	const wind = document.querySelector(".weather-details .wind span");
 
-	image.src = weatherImages[weatherData.weather[0].main] || "";
-	image.alt = weatherData.weather[0].description;
+	let imageElement = document.createElement("img");
+
+	imageElement.src = weatherImages[weatherData.weather[0].main] || "";
+	imageElement.alt = weatherData.weather[0].description;
+
+	weatherBox.insertBefore(imageElement, weatherBox.firstChild);
 
 	temperature.innerHTML = `${convertKelvinToCelsius(
 		weatherData.main.temp
