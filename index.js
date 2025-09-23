@@ -17,7 +17,6 @@ const convertKelvinToCelsius = (k) => Math.round(k - 273.15);
 
 const displayWeatherData = (weatherData) => {
 	console.log(weatherData);
-	const image = document.querySelector(".weather-box img");
 	const temperature = document.querySelector(".weather-box .temperature");
 	const description = document.querySelector(".weather-box .description");
 	const humidity = document.querySelector(".weather-details .humidity span");
