@@ -21,13 +21,10 @@ const displayWeatherData = (weatherData) => {
 	const description = document.querySelector(".weather-box .description");
 	const humidity = document.querySelector(".weather-details .humidity span");
 	const wind = document.querySelector(".weather-details .wind span");
+	const weatherImage = document.querySelector(".weather-img");
 
-	let imageElement = document.createElement("img");
-
-	imageElement.src = weatherImages[weatherData.weather[0].main] || "";
-	imageElement.alt = weatherData.weather[0].description;
-
-	weatherBox.insertBefore(imageElement, weatherBox.firstChild);
+	weatherImage.src = weatherImages[weatherData.weather[0].main] || "";
+	weatherImage.alt = weatherData.weather[0].description;
 
 	temperature.innerHTML = `${convertKelvinToCelsius(
 		weatherData.main.temp
@@ -91,6 +88,7 @@ const fetchWeatherData = async (city) => {
 
 		error404.style.display = "none";
 		error404.classList.remove("fade-in");
+
 		displayWeatherData(data);
 	} catch (error) {
 		console.error("Error fetching weather data : ", error);
